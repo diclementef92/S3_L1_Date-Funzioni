@@ -106,20 +106,22 @@ console.log("Esercizio 7: reverseString:", reverseString("direttore"));
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
-// */
-// const upperFirst = function (stringa) {
-//   let words = stringa.split(" ");
-//   let wordsUpper = Object.assign([], words);
-//   console.log(wordsUpper);
-//   for (let i = 0; i < wordsUpper.length; i++) {
-//     // let firstletter = words[i][0];
-//     wordsUpper[i][0] = "" + wordsUpper[i][0].toUpperCase();
-//     console.log(wordsUpper[i][0]);
-//   }
-//   return wordsUpper;
-// };
+*/
+const upperFirst = function (stringa) {
+  let words = stringa.split(" ");
+  let newArrayofWords = [];
+  for (let i = 0; i < words.length; i++) {
+    // ricopia ogni parola in altro array, con primo carattere maiuscolo
+    newArrayofWords.push(words[i].charAt(0).toUpperCase() + words[i].slice(1));
+    // console.log(newArrayofWords);
+  }
+  return newArrayofWords.join(" ");
+};
 
-// console.log(upperFirst("questa stringa sarà capitalizzata"));
+console.log(
+  "Esercizio 8: upperFirst:",
+  upperFirst("bellissima giornata oggi tony")
+);
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -141,7 +143,7 @@ console.log("Esercizio 9: cutString:", cutString("amare Alfredo"));
 const giveMeRandom = function (n) {
   let numeriCasuali = [];
   for (let i = 0; i < n; i++) {
-    numeriCasuali[i] = Math.floor(Math.random() * 10);
+    numeriCasuali[i] = Math.floor(Math.random() * 11); //fino a 10 incluso, 11 escluso
   }
   return numeriCasuali;
 };
