@@ -116,7 +116,6 @@ console.log("Esercizio 7: reverseString:", reverseString("direttore"));
 //     wordsUpper[i][0] = "" + wordsUpper[i][0].toUpperCase();
 //     console.log(wordsUpper[i][0]);
 //   }
-
 //   return wordsUpper;
 // };
 
@@ -138,3 +137,12 @@ console.log("Esercizio 9: cutString:", cutString("amare Alfredo"));
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
+
+const giveMeRandom = function (n) {
+  let numeriCasuali = [];
+  for (let i = 0; i < n; i++) {
+    numeriCasuali[i] = Math.floor(Math.random() * 10);
+  }
+  return numeriCasuali;
+};
+console.log("Esercizio 10: giveMeRandom:", giveMeRandom(8));
